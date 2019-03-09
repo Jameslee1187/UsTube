@@ -1,0 +1,11 @@
+{
+  "name": "ustube",
+  "version": "1.0.0",
+  "description": "Creating Youtube Clone",
+  "main": "index.js",
+  "author": "James Lee",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
