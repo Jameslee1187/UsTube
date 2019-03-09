@@ -6,9 +6,15 @@
   "author": "James Lee",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4",
     "express": "^4.16.4"
   },
-  "scripts":{
-    "start": "node index.js"
+  "scripts": {
+    "start": "nodemon --exec babel-node index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
   }
 }
