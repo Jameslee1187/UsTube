@@ -13,11 +13,11 @@ block content
                 a(href=`/users${routes.changePassword}`)
                     button 🔒 Change Password
                     
-          .uploaded-videos
+    .uploaded-videos
             each item in user.videos
-              +videoBlock{
+              +videoBlock({
               id:item.id,
               title:item.title,
               views:item.views,
               videoFile:item.fileUrl
-              }
+              })
