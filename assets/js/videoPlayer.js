@@ -16,10 +16,8 @@ function handlePlayClick() {
 }
 
 function init() {
-  console.log("f");
-
   playBtn.addEventListener("click", handlePlayClick);
-  console.log("g");
+  jsVolumeBtn.addEventListener("click", handleVolumeClick);
 }
 
 if (videoContainer) {
