@@ -6,15 +6,11 @@ function handlePlayClick() {
   console.log("a");
 
   if (videoPlayer.paused) {
-    console.log("b");
-
     videoPlayer.play();
-    console.log("c");
+    playBtn.innerHTML = '<i class="fas fa-pause"></i>';
   } else {
-    console.log("d");
-
     videoPlayer.pause();
-    console.log("e");
+    playBtn.innerHTML = '<i class="fas fa-play"></i>';
   }
 }
 

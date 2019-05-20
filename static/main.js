@@ -105,7 +105,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scs
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("var videoContainer = document.getElementById(\"jsVideoPlayer\");\nvar videoPlayer = document.querySelector(\"#jsVideoPlayer video\");\nvar playBtn = document.getElementById(\"jsPlayButton\");\n\nfunction handlePlayClick() {\n  console.log(\"a\");\n\n  if (videoPlayer.paused) {\n    console.log(\"b\");\n    videoPlayer.play();\n    console.log(\"c\");\n  } else {\n    console.log(\"d\");\n    videoPlayer.pause();\n    console.log(\"e\");\n  }\n}\n\nfunction init() {\n  console.log(\"f\");\n  playBtn.addEventListener(\"click\", handlePlayClick);\n  console.log(\"g\");\n}\n\nif (videoContainer) {\n  console.log(\"h\");\n  init();\n  console.log(\"ik\");\n}\n\n//# sourceURL=webpack:///./assets/js/videoPlayer.js?");
+eval("var videoContainer = document.getElementById(\"jsVideoPlayer\");\nvar videoPlayer = document.querySelector(\"#jsVideoPlayer video\");\nvar playBtn = document.getElementById(\"jsPlayButton\");\n\nfunction handlePlayClick() {\n  console.log(\"a\");\n\n  if (videoPlayer.paused) {\n    videoPlayer.play();\n    playBtn.innerHTML = '<i class=\"fas fa-pause\"></i>';\n  } else {\n    videoPlayer.pause();\n    playBtn.innerHTML = '<i class=\"fas fa-play\"></i>';\n  }\n}\n\nfunction init() {\n  console.log(\"f\");\n  playBtn.addEventListener(\"click\", handlePlayClick);\n  console.log(\"g\");\n}\n\nif (videoContainer) {\n  console.log(\"h\");\n  init();\n  console.log(\"ik\");\n}\n\n//# sourceURL=webpack:///./assets/js/videoPlayer.js?");
 
 /***/ }),
 
