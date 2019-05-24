@@ -18,6 +18,7 @@ function handlePlayClick() {
 function handleVolumeClick() {
   if (videoPlayer.muted) {
     videoPlayer.muted = false;
+    volumeBtn.innerHTML = '<i class="fas fa-volume-up></i>"';
   } else {
     videoPlayer.muted = true;
   }
