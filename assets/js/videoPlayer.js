@@ -15,9 +15,16 @@ function handlePlayClick() {
   }
 }
 
+function handleVolumeClick() {
+  if (videoPlayer.muted) {
+    videoPlayer.muted = false;
+  } else {
+    videoPlayer.muted = true;
+  }
+}
 function init() {
   playBtn.addEventListener("click", handlePlayClick);
-  jsVolumeBtn.addEventListener("click", handleVolumeClick);
+  volumeBtn.addEventListener("click", handleVolumeClick);
 }
 
 if (videoContainer) {
