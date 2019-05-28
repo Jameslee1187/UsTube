@@ -28,6 +28,7 @@ function handleVolumeClick() {
 function init() {
   playBtn.addEventListener("click", handlePlayClick);
   volumeBtn.addEventListener("click", handleVolumeClick);
+  fullScrnBtn.addEventListener("click", handleScreenClick);
 }
 
 if (videoContainer) {
