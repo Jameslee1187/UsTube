@@ -25,10 +25,12 @@ function handleVolumeClick() {
     volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>"';
   }
 }
+
+function goFullScreen() {}
 function init() {
   playBtn.addEventListener("click", handlePlayClick);
   volumeBtn.addEventListener("click", handleVolumeClick);
-  fullScrnBtn.addEventListener("click", handleScreenClick);
+  fullScrnBtn.addEventListener("click", goFullScreen);
 }
 
 if (videoContainer) {
