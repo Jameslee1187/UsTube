@@ -27,8 +27,9 @@ function handleVolumeClick() {
 }
 
 function goFullScreen() {
-  videoPlayer.requestFullScreen();
+  videoPlayer.webkitrequestFullScreen();
   fullScrnBtn.innerHTML = '<i class="fas fa-compress"></i>';
+  fullScrnBtn.removeEventListener("click", goFullScreen);
 }
 function init() {
   playBtn.addEventListener("click", handlePlayClick);
