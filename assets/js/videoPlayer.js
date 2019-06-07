@@ -33,7 +33,6 @@ function goFullScreen() {
 function init() {
   playBtn.addEventListener("click", handlePlayClick);
   volumeBtn.addEventListener("click", handleVolumeClick);
-  fullScrnBtn.addEventListener("click", goFullScreen);
 }
 
 if (videoContainer) {
