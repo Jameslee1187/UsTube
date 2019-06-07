@@ -26,10 +26,17 @@ function handleVolumeClick() {
   }
 }
 
+function exitFullScreen() {
+  fullScrnBtn.innerHTML = '<i class="fas fa-expand"></i>';
+  fullScrnBtn.addEventListener("click", goFullScreen);
+  document.webkitExitFullscreen();
+}
+
 function goFullScreen() {
   videoContainer.webkitRequestFullscreen();
   fullScrnBtn.innerHTML = '<i class="fas fa-compress"></i>';
   fullScrnBtn.removeEventListener("click", goFullScreen);
+  fullScrnBtn.addEventListener("click", exitFullScreen);
 }
 function init() {
   playBtn.addEventListener("click", handlePlayClick);
