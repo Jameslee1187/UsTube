@@ -27,13 +27,14 @@ function handleVolumeClick() {
 }
 
 function goFullScreen() {
-  videoPlayer.webkitrequestFullScreen();
+  videoContainer.webkitRequestFullscreen();
   fullScrnBtn.innerHTML = '<i class="fas fa-compress"></i>';
   fullScrnBtn.removeEventListener("click", goFullScreen);
 }
 function init() {
   playBtn.addEventListener("click", handlePlayClick);
   volumeBtn.addEventListener("click", handleVolumeClick);
+  fullScrnBtn.addEventListener("click", goFullScreen);
 }
 
 if (videoContainer) {
