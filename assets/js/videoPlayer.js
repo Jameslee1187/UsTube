@@ -4,6 +4,7 @@ const playBtn = document.getElementById("jsPlayButton");
 const volumeBtn = document.getElementById("jsVolumeBtn");
 const fullScrnBtn = document.getElementById("jsFullScreen");
 const currentTime = document.getElementById("currentTime");
+const totalTime = document.getElementById("totalTime");
 
 function handlePlayClick() {
   console.log("a");
@@ -72,10 +73,16 @@ const formatDate = seconds => {
   }
   return `${hours}:${totalSeconds}`;
 };
+
+function setTotalTime() {
+  const totalTimeString = formatDate(videoPlayer.duration);
+  totalTime.innerHTML = totalTimeString;
+}
 function init() {
   playBtn.addEventListener("click", handlePlayClick);
   volumeBtn.addEventListener("click", handleVolumeClick);
   fullScrnBtn.addEventListener("click", goFullScreen);
+  setTotalTime();
 }
 
 if (videoContainer) {
