@@ -71,7 +71,7 @@ const formatDate = seconds => {
   if (seconds < 10) {
     totalSeconds = `0${seconds}`;
   }
-  return `${hours}:${totalSeconds}`;
+  return `${hours}:${minutes}:${totalSeconds}`;
 };
 
 function setTotalTime() {
@@ -82,7 +82,7 @@ function init() {
   playBtn.addEventListener("click", handlePlayClick);
   volumeBtn.addEventListener("click", handleVolumeClick);
   fullScrnBtn.addEventListener("click", goFullScreen);
-  setTotalTime();
+  videoPlayer.addEventListener("loadedmetadata", setTotalTime);
 }
 
 if (videoContainer) {
