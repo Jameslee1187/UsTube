@@ -74,14 +74,14 @@ const formatDate = seconds => {
   return `${hours}:${minutes}:${totalSeconds}`;
 };
 
+function getCurrentTime() {
+  currentTime.innerHTML = formatDate(videoPlayer.currentTime);
+}
+
 function setTotalTime() {
   const totalTimeString = formatDate(videoPlayer.duration);
   totalTime.innerHTML = totalTimeString;
-  setInterval(getCurrentTime());
-}
-
-function getCurrentTime() {
-  currentTime.innerHTML = formatDate(videoPlayer.currentTime);
+  setInterval(getCurrentTime, 1000);
 }
 
 function init() {
