@@ -7,8 +7,6 @@ const currentTime = document.getElementById("currentTime");
 const totalTime = document.getElementById("totalTime");
 
 function handlePlayClick() {
-  console.log("a");
-
   if (videoPlayer.paused) {
     videoPlayer.play();
     playBtn.innerHTML = '<i class="fas fa-pause"></i>';
@@ -85,16 +83,18 @@ function setTotalTime() {
   setInterval(getCurrentTime, 1000);
 }
 
+function handleEnded() {
+  videoPlayer.currentTime = 0;
+}
+
 function init() {
   playBtn.addEventListener("click", handlePlayClick);
   volumeBtn.addEventListener("click", handleVolumeClick);
   fullScrnBtn.addEventListener("click", goFullScreen);
   videoPlayer.addEventListener("loadedmetadata", setTotalTime);
+  videoPlayer.addEventListener("ended", handleEnded);
 }
 
 if (videoContainer) {
-  console.log("h");
-
   init();
-  console.log("ik");
 }
