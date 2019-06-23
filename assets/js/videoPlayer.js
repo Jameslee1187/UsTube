@@ -77,7 +77,13 @@ const formatDate = seconds => {
 function setTotalTime() {
   const totalTimeString = formatDate(videoPlayer.duration);
   totalTime.innerHTML = totalTimeString;
+  setInterval(getCurrentTime());
 }
+
+function getCurrentTime() {
+  currentTime.innerHTML = formatDate(videoPlayer.currentTime);
+}
+
 function init() {
   playBtn.addEventListener("click", handlePlayClick);
   volumeBtn.addEventListener("click", handleVolumeClick);
