@@ -26,9 +26,7 @@ passport.use(
     {
       clientID: process.env.FB_ID,
       clientSecret: process.env.FB_SEC,
-      callbackURL: `https://afraid-cheetah-83.localtunnel.me${
-        routes.facebookCallback
-      }`,
+      callbackURL: `https://afraid-cheetah-83.localtunnel.me${routes.facebookCallback}`,
       profileFields: ["id", "displayName", "photos", "email"],
       scope: ["public_profile", "email"]
     },

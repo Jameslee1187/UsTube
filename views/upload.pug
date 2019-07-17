@@ -6,9 +6,12 @@ block content
         video#jsVideoPreview
         button#jsRecordBtn Start Recording
         form(action=`/videos${routes.upload}`, method="post", enctype="multipart/form-data")
+            //- multipart/form-data is for multer
+            //- multer is a middleware that gives a url for the file
             div.fileUpload
                 label(for="file") Video File
                 input(type="file", id="file", name="videoFile", required=true, accept="video/*")
+                //- videoFile is the multer file that matches the middleware name(uploadVideo)
             input(type="text", placeholder="Title", name="title", required=true)
             textarea(name="description", placeholder="Description", required=true)
             input(type="submit", value="Upload Video")

@@ -37,10 +37,11 @@ const routes = {
   userDetail: id => {
     if (id) {
       return `/users/${id}`;
-    } else {
-      return USER_DETAIL;
     }
+    return USER_DETAIL;
   },
+  // -Making a function out of this because while express needs the id to know which users it is using
+  // - The HTML doesn't show the actual id, it shows :id. This function will give the actual ids
   editProfile: EDIT_PROFILE,
   changePassword: CHANGE_PASSWORD,
   videos: VIDEOS,
@@ -48,24 +49,27 @@ const routes = {
   videoDetail: id => {
     if (id) {
       return `/videos/${id}`;
-    } else {
-      return VIDEO_DETAIL;
     }
+    return VIDEO_DETAIL;
   },
+  // -Making a function out of this because while express needs the id to know which users it is using
+  // - The HTML doesn't show the actual id, it shows :id. This function will give the actual ids
   editVideo: id => {
     if (id) {
       return `/videos/${id}/edit`;
-    } else {
-      return EDIT_VIDEO;
     }
+    return EDIT_VIDEO;
   },
+  // -Making a function out of this because while express needs the id to know which users it is using
+  // - The HTML doesn't show the actual id, it shows :id. This function will give the actual ids
   deleteVideo: id => {
     if (id) {
       return `/videos/${id}/delete`;
-    } else {
-      return DELETE_VIDEO;
     }
+    return DELETE_VIDEO;
   },
+  // -Making a function out of this because while express needs the id to know which users it is using
+  // - The HTML doesn't show the actual id, it shows :id. This function will give the actual ids
   gitHub: GITHUB,
   githubCallback: GITHUB_CALLBACK,
   me: ME,

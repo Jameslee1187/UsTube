@@ -5,10 +5,14 @@ header.header
                 i.fab.fa-youtube
         .header__column
             form(action=routes.search, method="get")
+                //- goes to search route and is a get request to get the results 
                 input(type="text", placeholder="Search by term...", name="term")
+                //- videoController is where searchingBy function is created
+                //-the name is term so when you go to the search.pug the name is going to be called searchingBy which is the term
         .header__column
             ul
                 if !loggedUser
+                    //- loggedUser is a local variable in middlewares
                     li
                         a(href=routes.join) Join
                     li
@@ -16,6 +20,8 @@ header.header
                 else 
                     li
                         a(href=`/videos${routes.upload}`) Upload
+                        //-the route needs to be videos/upload because upload belongs to videos and nothing else.
+                        //-the other functions are related to users
                     li
                         a(href=routes.me) Profile
                     li

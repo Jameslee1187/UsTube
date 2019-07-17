@@ -3,7 +3,9 @@ import routes from "../routes";
 import User from "../models/User";
 
 export const getJoin = (req, res) => {
-  res.render("join", { pageTitle: "Join" });
+  res.render("join", {
+    pageTitle: "Join"
+  });
 };
 
 export const postJoin = async (req, res, next) => {
@@ -12,7 +14,9 @@ export const postJoin = async (req, res, next) => {
   } = req;
   if (password !== password2) {
     res.status(400);
-    res.render("join", { pageTitle: "Join" });
+    res.render("join", {
+      pageTitle: "Join"
+    });
   } else {
     try {
       const user = await User({
@@ -29,7 +33,9 @@ export const postJoin = async (req, res, next) => {
 };
 
 export const getLogin = (req, res) =>
-  res.render("login", { pageTitle: "Log In" });
+  res.render("login", {
+    pageTitle: "Log In"
+  });
 
 export const postLogin = passport.authenticate("local", {
   failureRedirect: routes.login,
@@ -48,7 +54,9 @@ export const githubLoginCallback = async (
     _json: { id, avatar_url: avatarUrl, name, email }
   } = profile;
   try {
-    const user = await User.findOne({ email });
+    const user = await User.findOne({
+      email
+    });
     if (user) {
       user.githubId = id;
       user.save();
@@ -77,7 +85,9 @@ export const facebookLoginCallback = async (_, __, profile, cb) => {
     _json: { id, name, email }
   } = profile;
   try {
-    const user = await User.findOne({ email });
+    const user = await User.findOne({
+      email
+    });
     if (user) {
       user.facebookId = id;
       user.avatarUrl = `https://graph.facebook.com/${id}/picture?type=large`;
@@ -106,7 +116,10 @@ export const logout = (req, res) => {
 };
 
 export const getMe = (req, res) => {
-  res.render("userDetail", { pageTitle: "User Detail", user: req.user });
+  res.render("userDetail", {
+    pageTitle: "User Detail",
+    user: req.user
+  });
 };
 
 export const userDetail = async (req, res) => {
@@ -116,14 +129,19 @@ export const userDetail = async (req, res) => {
   try {
     const user = await User.findById(id).populate("videos");
 
-    res.render("userDetail", { pageTitle: "User Detail", user });
+    res.render("userDetail", {
+      pageTitle: "User Detail",
+      user
+    });
   } catch (error) {
     res.redirect(routes.home);
   }
 };
 
 export const getEditProfile = (req, res) =>
-  res.render("editProfile", { pageTitle: "Edit Profile" });
+  res.render("editProfile", {
+    pageTitle: "Edit Profile"
+  });
 
 export const postEditProfile = async (req, res) => {
   const {
@@ -143,7 +161,9 @@ export const postEditProfile = async (req, res) => {
 };
 
 export const getChangePassword = (req, res) =>
-  res.render("changePassword", { pageTitle: "Change Password" });
+  res.render("changePassword", {
+    pageTitle: "Change Password"
+  });
 
 export const postChangePassword = async (req, res) => {
   const {

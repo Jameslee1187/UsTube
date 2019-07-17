@@ -15,9 +15,11 @@ const videoRouter = express.Router();
 // Upload
 videoRouter.get(routes.upload, onlyPrivate, getUpload);
 videoRouter.post(routes.upload, onlyPrivate, uploadVideo, postUpload);
+// need to add uploadVideo for it to go to the server
 
 // Video Detail
 videoRouter.get(routes.videoDetail(), videoDetail);
+// -needs to be a function videoDetail() because it is a function being run in routes
 
 // Edit Video
 videoRouter.get(routes.editVideo(), onlyPrivate, getEditVideo);

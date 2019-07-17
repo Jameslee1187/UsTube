@@ -22,17 +22,24 @@ const CookieStore = MongoStore(session);
 app.use(helmet());
 app.set("view engine", "pug");
 app.use("/uploads", express.static("uploads"));
+// this gives access to the files that we created with multer
 app.use("/static", express.static("static"));
 app.use(cookieParser());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+);
 app.use(morgan("dev"));
 app.use(
   session({
     secret: process.env.COOKIE_SECRET,
     resave: true,
     saveUninitialized: false,
-    store: new CookieStore({ mongooseConnection: mongoose.connection })
+    store: new CookieStore({
+      mongooseConnection: mongoose.connection
+    })
   })
 );
 app.use(passport.initialize());

@@ -4,6 +4,7 @@ const VideoSchema = new mongoose.Schema({
   fileUrl: {
     type: String,
     required: "File is required"
+    // dont save video on database, save the link url
   },
   title: {
     type: String,
@@ -32,3 +33,5 @@ const VideoSchema = new mongoose.Schema({
 
 const model = mongoose.model("Video", VideoSchema);
 export default model;
+
+// this model gets imported at init.js
