@@ -17,6 +17,7 @@ const startRecording = async () => {
     recordBtn.innerHTML = "Stop recording";
   } catch (error) {
     recordBtn.innerHTML = "😫 Sorry You Can't Record";
+  } finally {
     recordBtn.removeEventListener("click", startRecording);
   }
 };
