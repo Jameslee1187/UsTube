@@ -14,6 +14,7 @@ const startRecording = async () => {
     videoPreview.srcObject = stream;
     videoPreview.muted = true;
     videoPreview.play();
+    recordBtn.innerHTML = "Stop recording";
   } catch (error) {
     recordBtn.innerHTML = "😫 Sorry You Can't Record";
     recordBtn.removeEventListener("click", startRecording);
