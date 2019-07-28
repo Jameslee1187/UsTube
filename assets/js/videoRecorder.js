@@ -3,12 +3,20 @@ const recordBtn = document.getElementById("jsRecordBtn");
 const videoPreview = document.getElementById("jsVideoPreview");
 
 let streamObject;
+let videoRecorder;
+
+const handleVideoData = event => {
+  console.log(event);
+};
 
 const startRecording = async () => {
-  console.log(streamObject);
   const videoRecorder = new MediaRecorder(streamObject);
   videoRecorder.start();
-  console.log(videoRecorder);
+  videoRecorder.addEventListener("dataavialable", handleVideoData);
+};
+
+const stopRecording = () => {
+  videoRecorder.stop();
 };
 
 const getVideo = async () => {
