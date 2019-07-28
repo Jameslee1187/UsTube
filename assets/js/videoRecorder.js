@@ -13,10 +13,14 @@ const startRecording = async () => {
   const videoRecorder = new MediaRecorder(streamObject);
   videoRecorder.start();
   videoRecorder.addEventListener("dataavialable", handleVideoData);
+  recordBtn.addEventListener("click", stopRecording);
+  recordBtn.innerHTML = "Start Recording";
 };
 
 const stopRecording = () => {
   videoRecorder.stop();
+  recordBtn.addEventListener("click", getVideo);
+  recordBtn.innerHTML = "Stop Recording";
 };
 
 const getVideo = async () => {
