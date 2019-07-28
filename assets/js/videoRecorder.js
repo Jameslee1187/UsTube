@@ -6,21 +6,21 @@ let streamObject;
 let videoRecorder;
 
 const handleVideoData = event => {
-  console.log(event);
-};
-
-const startRecording = async () => {
-  const videoRecorder = new MediaRecorder(streamObject);
-  videoRecorder.start();
-  videoRecorder.addEventListener("dataavialable", handleVideoData);
-  recordBtn.addEventListener("click", stopRecording);
-  recordBtn.innerHTML = "Start Recording";
+  const { data: videoFile } = event;
 };
 
 const stopRecording = () => {
   videoRecorder.stop();
+  recordBtn.removeEventListener("click", stopRecording);
   recordBtn.addEventListener("click", getVideo);
-  recordBtn.innerHTML = "Stop Recording";
+  recordBtn.innerHTML = "Start Recording";
+};
+
+const startRecording = async () => {
+  videoRecorder = new MediaRecorder(streamObject);
+  videoRecorder.start();
+  videoRecorder.addEventListener("dataavialable", handleVideoData);
+  recordBtn.addEventListener("click", stopRecording);
 };
 
 const getVideo = async () => {
