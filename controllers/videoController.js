@@ -143,3 +143,5 @@ export const deleteVideo = async (req, res) => {
   }
   res.redirect(routes.home);
 };
+
+export const registerView = async (req, res) => {};
