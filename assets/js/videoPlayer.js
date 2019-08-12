@@ -27,20 +27,20 @@ function handlePlayClick() {
 function handleVolumeClick() {
   if (videoPlayer.muted) {
     videoPlayer.muted = false;
-    volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>"';
+    volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
     volumeRange.value = videoPlayer.volume;
   } else {
     volumeRange.value = 0;
     videoPlayer.muted = true;
-    volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>"';
+    volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
   }
 }
 
 function exitFullScreen() {
   fullScrnBtn.innerHTML = '<i class="fas fa-expand"></i>';
   fullScrnBtn.addEventListener("click", goFullScreen);
-  if (document.exitFullScreen) {
-    document.exitFullScreen();
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
   } else if (document.mozCancelFullScreen) {
     document.mozCancelFullScreen();
   } else if (document.webkitExitFullscreen) {
@@ -57,8 +57,8 @@ function goFullScreen() {
     videoContainer.mozRequestFullScreen();
   } else if (videoContainer.webkitRequestFullscreen) {
     videoContainer.webkitRequestFullscreen();
-  } else if (videoContainer.msRequestFullScreen) {
-    videoContainer.msRequestFullScreen();
+  } else if (videoContainer.msRequestFullscreen) {
+    videoContainer.msRequestFullscreen();
   }
   fullScrnBtn.innerHTML = '<i class="fas fa-compress"></i>';
   fullScrnBtn.removeEventListener("click", goFullScreen);
@@ -105,7 +105,7 @@ function handleDrag(event) {
   } = event;
   videoPlayer.volume = value;
   if (value >= 0.6) {
-    volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>"';
+    volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
   } else if (value >= 0.2) {
     volumeBtn.innerHTML = '<i class="fas fa-volume-down"></i>';
   } else {
@@ -114,7 +114,7 @@ function handleDrag(event) {
 }
 
 function init() {
-  videoPlayer.volume = "0.5";
+  videoPlayer.volume = 0.5;
   playBtn.addEventListener("click", handlePlayClick);
   volumeBtn.addEventListener("click", handleVolumeClick);
   fullScrnBtn.addEventListener("click", goFullScreen);
