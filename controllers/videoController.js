@@ -1,5 +1,6 @@
 import routes from "../routes";
 import Video from "../models/Video";
+import Comment from "../models/Comment";
 // importing video model to access elements
 
 export const home = async (req, res) => {
@@ -156,6 +157,23 @@ export const postRegisterView = async (req, res) => {
     video.views += 1;
     video.save();
     res.status(200);
+  } catch (error) {
+    res.status(400);
+  } finally {
+    res.end();
+  }
+};
+
+// Add Comment
+
+export const postAddComment = async (req, res) => {
+  const {
+    params: { id },
+    body: { comment }
+  } = req;
+  try {
+    const video = await Video.findById(id);
+    const newComment = await Comment;
   } catch (error) {
     res.status(400);
   } finally {
