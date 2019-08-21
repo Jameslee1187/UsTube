@@ -27,5 +27,7 @@ block content
             form.add_comment#jsAddComment
             input(type = "text", placeholder = "Add a comment")
             ul.video_comments-list
-            
+                each comment in video.comments
+                    span comment.text
+
 
