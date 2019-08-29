@@ -567,9 +567,15 @@ input[type="submit"] {
     .video-detail__container .video__info .video__description {
       font-size: 16px; }
   .video-detail__container .video__comments {
-    margin-top: 25px; }
+    margin-top: 25px;
+    text-align: center; }
     .video-detail__container .video__comments .video__comment-number {
       font-size: 18px; }
+    .video-detail__container .video__comments .add__comment {
+      margin-top: 25px;
+      width: 100%; }
+      .video-detail__container .video__comments .add__comment input {
+        width: 100%; }
 
 .user-profile {
   width: 100%;
