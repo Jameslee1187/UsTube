@@ -21,11 +21,11 @@ block content
                 a(href=routes.userDetail(video.creator.id))=video.creator.name
         .video__comments
             if video.comments.length === 1
-                span.video__comment-number
+                span.video__comment-number   
                     span#jsCommentNumber 1
                     |  comment
             else
-                span.video__comment-number
+                span.video__comment-number                            
                     span#jsCommentNumber=video.comments.length
                     |  comments
             form.add__comment#jsAddComment
